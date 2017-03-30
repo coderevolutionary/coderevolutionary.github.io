@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('app', ['ngRoute', 'btford.markdown'])
-   .config(['$routeProvider', function ($routeProvider) {
+   .config([function () {
 
-   }]).run(function ($rootScope) {
+   }]).run(function () {
    });
 });
