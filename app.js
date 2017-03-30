@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('app', ['ngRoute', 'btford.markdown'])
+angular.module('app', [])
    .config([function () {
 
    }]).run(function () {
