@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('app', ['components', 'ngRoute', 'btford.markdown'])
-   .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
+angular.module('app', ['ngRoute', 'btford.markdown'])
+   .config(['$routeProvider', function ($routeProvider) {
 
       $routeProvider
          .when('/', {
