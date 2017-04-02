@@ -14,7 +14,7 @@ angular.module('btford.markdown', ['ngSanitize']).
         opts = newOpts;
       },
       $get: function () {
-        return new Showdown.converter(opts);
+        return new showdown.Converter(opts);
       }
     };
   }).
@@ -26,10 +26,12 @@ angular.module('btford.markdown', ['ngSanitize']).
           scope.$watch(attrs.btfMarkdown, function (newVal) {
             var html = newVal ? $sanitize(markdownConverter.makeHtml(newVal)) : '';
             element.html(html);
+            element.find('a').attr('target', '_blank');
           });
         } else {
           var html = $sanitize(markdownConverter.makeHtml(element.text()));
           element.html(html);
+          element.find('a').attr('target', '_blank');
         }
       }
     };

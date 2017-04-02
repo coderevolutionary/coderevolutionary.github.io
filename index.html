@@ -2,22 +2,63 @@
 <html ng-app="app">
 <head>
    <meta charset="utf-8">
+   <meta name="fragment" content="!">
+   <base href="/">
+   <meta name="robots" content="follow,index">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-   <meta name="Description" content="Беларусь устала от Лукашенко и узурпаторов власти, пора брать власть в свои руки! Живе, Беларусь!">
-   <base href="/">
+   <meta name="Description"
+         content="Беларусь устала от Лукашенко и узурпаторов власти, пора брать власть в свои руки! Живе, Беларусь!">
 
    <script src="vendors/jq.js"></script>
    <script src="vendors/angular.min.js"></script>
-   <script src="app.js"></script>
    <script src="vendors/angular-route.min.js"></script>
    <script src="vendors/angular-sanitize.min.js"></script>
+   <script src="vendors/materialize.min.js"></script>
    <script src="vendors/showdown.min.js"></script>
    <script src="vendors/markdown.js"></script>
-
+   <script src="app.js"></script>
+   <script src="pages/about/about.js"></script>
+   <script src="pages/tutorials/q-and-a.js"></script>
+   <script src="pages/analysis/collect-info.js"></script>
+   <script src="pages/prepare/social/protection.js"></script>
+   <script src="pages/prepare/street/protection.js"></script>
+   <script src="pages/steps/steps.js"></script>
+   <script src="shared/nav.js"></script>
+   <script src="shared/lay.js"></script>
+   <link rel="stylesheet" type="text/css" href="styles/style.css">
 </head>
-<body>
-<div class="view" ng-view>
+<body ng-init="toggled = true">
+<ul id="slide-out" class="side-nav fixed" ng-class="{'toggle': toggle}" ng-controller="navController">
+   <li class="hide-on-large-only" ng-click="toggle = !toggle" ng-class="{'active': toggle}">
+      <a data-activates="slide-out" class="button-collapse pointer"><i class="material-icons">menu</i></a>
+   </li>
+   <li ng-class="{'active': isSelected('/')}">
+      <a href="/"><i class="material-icons">info</i>О проекте
+      </a>
+   </li>
+   <li ng-class="{'active': isSelected('/q-and-a')}">
+      <a href="/q-and-a"><i class="material-icons">help</i>Q&A</a>
+   </li>
+   <li ng-class="{'active': isSelected('/collect-info')}"><a href="/collect-info">
+      <i class="material-icons">hearing</i>Сбор информации</a></li>
+
+   <li class="no-padding">
+      <ul class="collapsible">
+         <li>
+            <a class="collapsible-header"><i class="material-icons">security</i>Подготовка</a>
+            <div class="collapsible-body">
+               <ul>
+                  <li ng-class="{'active': isSelected('/protection-social')}"><a href="/protection-social"><i class="material-icons">verified_user</i>Защита в сети</a></li>
+                  <li ng-class="{'active': isSelected('/protection-street')}"><a href="/protection-street"><i class="material-icons">favorite</i>Защита на акциях</a></li>
+               </ul>
+            </div>
+         </li>
+      </ul>
+   </li>
+   <li ng-class="{'active': isSelected('/steps')}"><a href="/steps"><i class="material-icons">restaurant</i>Выполнение</a></li>
+</ul>
+<div class="view" ng-view ng-controller="layController">
 
 </div>
 </body>

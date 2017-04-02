@@ -1,0 +1,133 @@
+@import url(css/materialize.min.css);
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px; }
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.1), inset 0 -1px 0 rgba(0, 0, 0, 0.07); }
+
+::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+  display: none; }
+
+::-webkit-scrollbar-corner {
+  background-color: transparent; }
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important; }
+
+html {
+  font-family: "Roboto", sans-serif;
+  background-color: #FFF;
+  font-size: 15px; }
+  @media only screen and (max-width: 1000px) {
+    html {
+      font-size: 14px; } }
+  @media only screen and (max-width: 850px) {
+    html {
+      font-size: 13px; } }
+  @media only screen and (max-width: 700px) {
+    html {
+      font-size: 12px; } }
+  @media only screen and (max-width: 600px) {
+    html {
+      font-size: 11px; } }
+  html body {
+    width: 100% !important; }
+  html .view {
+    padding: 0 2rem 0 19rem; }
+    @media only screen and (max-width: 992px) {
+      html .view {
+        padding: 0 2rem 0 6rem; } }
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(iconfont/MaterialIcons-Regular.eot);
+  /* For IE6-8 */
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url(iconfont/MaterialIcons-Regular.woff2) format("woff2"), url(iconfont/MaterialIcons-Regular.woff) format("woff"), url(iconfont/MaterialIcons-Regular.ttf) format("truetype"); }
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: calc(1rem + 10px);
+  /* Preferred icon size */
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  color: #000000;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga'; }
+
+h1 {
+  font-size: 3rem;
+  border-bottom: 1px solid #eaecef;
+  font-weight: 500; }
+
+h2 {
+  font-size: 2.5rem;
+  border-bottom: 1px solid #eaecef;
+  font-weight: 500; }
+
+h3 {
+  font-size: 2rem;
+  border-bottom: 1px solid #eaecef;
+  font-weight: 500; }
+
+h4 {
+  font-size: 1.5rem;
+  border-bottom: 1px solid #eaecef;
+  font-weight: 500; }
+
+.pointer {
+  cursor: pointer; }
+
+.side-nav {
+  width: 17rem;
+  overflow-x: hidden;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  transition: 0.3s; }
+  .side-nav > li {
+    white-space: nowrap; }
+    .side-nav > li .material-icons {
+      margin-right: 1.25rem !important; }
+    .side-nav > li.active {
+      background-color: #ee6e73; }
+      .side-nav > li.active a {
+        color: #fff; }
+  @media only screen and (max-width: 992px) {
+    .side-nav {
+      -webkit-transform: translateX(0) !important;
+      transform: translateX(0) !important;
+      width: 4rem; }
+      .side-nav > li > a, .side-nav .collapsible > li > a {
+        padding: 0 1rem !important; } }
+  .side-nav .no-padding .collapsible-header {
+    padding: 0 32px; }
+  .side-nav .no-padding .collapsible-body a {
+    padding: 0 45px !important; }
+    @media only screen and (max-width: 992px) {
+      .side-nav .no-padding .collapsible-body a {
+        padding: 0 1rem !important; } }
+  @media only screen and (max-width: 992px) {
+    .side-nav:hover, .side-nav.toggle {
+      width: 19rem; } }
+
+.markdown ul {
+  padding-left: 2em; }
+  .markdown ul li {
+    list-style-type: disc; }
