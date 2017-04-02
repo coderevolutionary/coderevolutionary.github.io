@@ -1,9 +1,3 @@
-/*
- * angular-markdown-directive v0.3.1
- * (c) 2013-2014 Brian Ford http://briantford.com
- * License: MIT
- */
-
 'use strict';
 
 angular.module('btford.markdown', ['ngSanitize']).
@@ -26,12 +20,16 @@ angular.module('btford.markdown', ['ngSanitize']).
           scope.$watch(attrs.btfMarkdown, function (newVal) {
             var html = newVal ? $sanitize(markdownConverter.makeHtml(newVal)) : '';
             element.html(html);
-            element.find('a').attr('target', '_blank');
+            if (item.href[0] != '/')
+              element.find('a').attr('target', '_blank');
           });
         } else {
           var html = $sanitize(markdownConverter.makeHtml(element.text()));
           element.html(html);
-          element.find('a').attr('target', '_blank');
+          angular.forEach(element.find('a'), function (item) {
+            if (item.href[0] != '/')
+              element.find('a').attr('target', '_blank');
+          });
         }
       }
     };
